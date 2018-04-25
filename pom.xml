@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xwtech</groupId>
-    <artifactId>traffic_demo</artifactId>
+    <artifactId>springboot_shiro_mybatis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>traffic_demo</name>
-    <description>traffic_demo</description>
+    <name>springboot_shiro_mybatis</name>
+    <description>springboot_shiro_mybatis</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -107,7 +107,7 @@
     </dependencies>
 
     <build>
-        <finalName>traffic_demo</finalName>
+        <finalName>springboot_shiro_mybatis</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -1,31 +1,31 @@
 server:
   port: 8081
   servlet:
-    context-path: /traffic_subway
+    context-path: /springboot_shiro_mybatis
 
 spring:
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      username: xwtech
-      password: hwfx123
+      username: root
+      password: 123
       driver-class-name: com.mysql.jdbc.Driver
-      url:  jdbc:mysql://221.226.175.82:9913/CMCC?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&socketTimeout=60000
-      db-type: com.alibaba.druid.pool.DruidDataSource     #Êı¾İÔ´ÀàĞÍÆôÓÃDruid
-      filters: stat                                       #ÊôĞÔÀàĞÍÊÇ×Ö·û´®£¬Í¨¹ı±ğÃûµÄ·½Ê½ÅäÖÃÀ©Õ¹²å¼ş£¬³£ÓÃµÄ²å¼şÓĞ£º¼à¿ØÍ³¼ÆÓÃµÄfilter:statÈÕÖ¾ÓÃµÄfilter:log4j·ÀÓùsql×¢ÈëµÄfilter:wall
-      max-active: 20                                      #×î´óÁ¬½Ó³ØÊıÁ¿
-      initial-size: 1                                     #³õÊ¼»¯Ê±½¨Á¢ÎïÀíÁ¬½ÓµÄ¸öÊı¡£³õÊ¼»¯·¢ÉúÔÚÏÔÊ¾µ÷ÓÃinit·½·¨£¬»òÕßµÚÒ»´ÎgetConnectionÊ±
-      max-wait: 60000                                     #»ñÈ¡Á¬½ÓÊ±×î´óµÈ´ıÊ±¼ä£¬µ¥Î»ºÁÃë
+      url:  jdbc:mysql://localhost:3306/CMCC?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&socketTimeout=60000
+      db-type: com.alibaba.druid.pool.DruidDataSource     #ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Druid
+      filters: stat                                       #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ²ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½Ãµï¿½filter:statï¿½ï¿½Ö¾ï¿½Ãµï¿½filter:log4jï¿½ï¿½ï¿½ï¿½sql×¢ï¿½ï¿½ï¿½filter:wall
+      max-active: 20                                      #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½
+      initial-size: 1                                     #ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Ò»ï¿½ï¿½getConnectionÊ±
+      max-wait: 60000                                     #ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½È´ï¿½Ê±ï¿½ä£¬ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
       min-idle: 1
-      time-between-eviction-runs-millis: 60000            #1) DestroyÏß³Ì»á¼ì²âÁ¬½ÓµÄ¼ä¸ôÊ±¼ä2) testWhileIdleµÄÅĞ¶ÏÒÀ¾İ£¬ÏêÏ¸¿´testWhileIdleÊôĞÔµÄËµÃ÷
+      time-between-eviction-runs-millis: 60000            #1) Destroyï¿½ß³Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ¼ï¿½ï¿½Ê±ï¿½ï¿½2) testWhileIdleï¿½ï¿½ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½İ£ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½testWhileIdleï¿½ï¿½ï¿½Ôµï¿½Ëµï¿½ï¿½
       min-evictable-idle-time-millis: 300000
-      validation-query: select 'x'                        #ÓÃÀ´¼ì²âÁ¬½ÓÊÇ·ñÓĞĞ§µÄsql£¬ÒªÇóÊÇÒ»¸ö²éÑ¯Óï¾ä¡£Èç¹ûvalidationQueryÎªnull£¬testOnBorrow¡¢testOnReturn¡¢testWhileIdle¶¼²»»áÆä×÷ÓÃ¡£
-      test-while-idle: true                               #½¨ÒéÅäÖÃÎªtrue£¬²»Ó°ÏìĞÔÄÜ£¬²¢ÇÒ±£Ö¤°²È«ĞÔ¡£ÉêÇëÁ¬½ÓµÄÊ±ºò¼ì²â£¬Èç¹û¿ÕÏĞÊ±¼ä´óÓÚtimeBetweenEvictionRunsMillis£¬Ö´ĞĞvalidationQuery¼ì²âÁ¬½ÓÊÇ·ñÓĞĞ§¡£
-      test-on-return: false                               #¹é»¹Á¬½ÓÊ±Ö´ĞĞvalidationQuery¼ì²âÁ¬½ÓÊÇ·ñÓĞĞ§£¬×öÁËÕâ¸öÅäÖÃ»á½µµÍĞÔÄÜ
-      test-on-borrow: false                               #ÉêÇëÁ¬½ÓÊ±Ö´ĞĞvalidationQuery¼ì²âÁ¬½ÓÊÇ·ñÓĞĞ§£¬×öÁËÕâ¸öÅäÖÃ»á½µµÍĞÔÄÜ¡£
-      pool-prepared-statements: false                     #ÊÇ·ñ»º´æpreparedStatement£¬Ò²¾ÍÊÇPSCache¡£PSCache¶ÔÖ§³ÖÓÎ±êµÄÊı¾İ¿âĞÔÄÜÌáÉı¾Ş´ó£¬±ÈÈçËµoracle¡£ÔÚmysqlÏÂ½¨Òé¹Ø±Õ¡£
-      max-open-prepared-statements: 20                    #ÒªÆôÓÃPSCache£¬±ØĞëÅäÖÃ´óÓÚ0£¬µ±´óÓÚ0Ê±£¬poolPreparedStatements×Ô¶¯´¥·¢ĞŞ¸ÄÎªtrue¡£ÔÚDruidÖĞ£¬²»»á´æÔÚOracleÏÂPSCacheÕ¼ÓÃÄÚ´æ¹ı¶àµÄÎÊÌâ£¬¿ÉÒÔ°ÑÕâ¸öÊıÖµÅäÖÃ´óÒ»Ğ©£¬±ÈÈçËµ100
+      validation-query: select 'x'                        #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½sqlï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ä¡£ï¿½ï¿½ï¿½validationQueryÎªnullï¿½ï¿½testOnBorrowï¿½ï¿½testOnReturnï¿½ï¿½testWhileIdleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¡ï¿½
+      test-while-idle: true                               #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªtrueï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ò±ï¿½Ö¤ï¿½ï¿½È«ï¿½Ô¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Ê±ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½timeBetweenEvictionRunsMillisï¿½ï¿½Ö´ï¿½ï¿½validationQueryï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½
+      test-on-return: false                               #ï¿½é»¹ï¿½ï¿½ï¿½ï¿½Ê±Ö´ï¿½ï¿½validationQueryï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»á½µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      test-on-borrow: false                               #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ö´ï¿½ï¿½validationQueryï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»á½µï¿½ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½
+      pool-prepared-statements: false                     #ï¿½Ç·ñ»º´ï¿½preparedStatementï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½PSCacheï¿½ï¿½PSCacheï¿½ï¿½Ö§ï¿½ï¿½ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş´ó£¬±ï¿½ï¿½ï¿½Ëµoracleï¿½ï¿½ï¿½ï¿½mysqlï¿½Â½ï¿½ï¿½ï¿½Ø±Õ¡ï¿½
+      max-open-prepared-statements: 20                    #Òªï¿½ï¿½ï¿½ï¿½PSCacheï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0Ê±ï¿½ï¿½poolPreparedStatementsï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş¸ï¿½Îªtrueï¿½ï¿½ï¿½ï¿½Druidï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oracleï¿½ï¿½PSCacheÕ¼ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ã´ï¿½Ò»Ğ©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµ100
       stat-view-servlet:
         enabled: true
         url-pattern: "/druid/*"
