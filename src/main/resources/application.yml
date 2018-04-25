@@ -8,10 +8,10 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      username: xwtech
-      password: hwfx123
+      username: root
+      password: 123
       driver-class-name: com.mysql.jdbc.Driver
-      url:  jdbc:mysql://221.226.175.82:9913/CMCC?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&socketTimeout=60000
+      url:  jdbc:mysql://localhost:3306/cmcc?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&socketTimeout=60000
       db-type: com.alibaba.druid.pool.DruidDataSource     #数据源类型启用Druid
       filters: stat                                       #属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：监控统计用的filter:stat日志用的filter:log4j防御sql注入的filter:wall
       max-active: 20                                      #最大连接池数量
