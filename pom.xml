@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xwtech</groupId>
-    <artifactId>traffic_subway</artifactId>
+    <artifactId>traffic_demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>traffic_subway</name>
-    <description>subway</description>
+    <name>traffic_demo</name>
+    <description>traffic_demo</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -107,7 +107,7 @@
     </dependencies>
 
     <build>
-        <finalName>traffic_subway</finalName>
+        <finalName>traffic_demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
